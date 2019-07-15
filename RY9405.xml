@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x_tags>
+  <User>
+    <Name>Shu Saito</Name>
+    <Organization>Marine Division, Global Environment and Marine Depertment, Japan Meteorological Agency</Organization>
+    <Address>1-3-4 Otemachi, Chiyoda-ku, Tokyo, 100-8122, Japan</Address>
+    <Phone>+81-3-3212-8341  Ext.5133</Phone>
+    <Email>seadata@climar.kishou.go.jp</Email>
+  </User>
+  <Investigator>
+    <Name>Shu Saito</Name>
+  </Investigator>
+  <Dataset_Info>
+    <Funding_Info>"Observation for Monitoring Background Marine Pollution" Project of Japan Meteorological Agency</Funding_Info>
+    <Submission_Dates>
+      <Initial_Submission>20040621</Initial_Submission>
+      <Revised_Submission>20160113</Revised_Submission>
+    </Submission_Dates>
+  </Dataset_Info>
+  <Cruise_Info>
+    <Experiment>
+      <Experiment_Name>RY9405</Experiment_Name>
+      <Experiment_Type>Research Cruise</Experiment_Type>
+      <Platform_Type>Research Vessel</Platform_Type>
+      <Co2_Instrument_type>Showerhead equilibrator and infrared analyser</Co2_Instrument_type>
+      <Cruise>
+        <Cruise_ID>49RY19940504</Cruise_ID>
+        <Cruise_Info>Operational oceanographic observation of research vessel Ryofu Maru II</Cruise_Info>
+        <Geographical_Coverage>
+          <Geographical_Region>Western Pacific Ocean</Geographical_Region>
+          <Bounds>
+            <Westernmost_Longitude>137.483</Westernmost_Longitude>
+            <Easternmost_Longitude>141.983</Easternmost_Longitude>
+            <Northernmost_Latitude>35</Northernmost_Latitude>
+            <Southernmost_Latitude>32</Southernmost_Latitude>
+          </Bounds>
+        </Geographical_Coverage>
+        <Temporal_Coverage>
+          <Start_Date>19940504</Start_Date>
+          <End_Date>19940517</End_Date>
+        </Temporal_Coverage>
+        <Ports_of_Call>Tokyo, Japan</Ports_of_Call>
+      </Cruise>
+    </Experiment>
+    <Vessel>
+      <Vessel_Name>R/V Ryofu Maru II</Vessel_Name>
+      <Vessel_ID>49RY</Vessel_ID>
+      <Vessel_Owner>Ministry of Land, Infrastructure, Transport and Tourism</Vessel_Owner>
+    </Vessel>
+  </Cruise_Info>
+  <Variables_Info>
+    <Variable>
+      <Variable_Name>Cruise</Variable_Name>
+    </Variable>
+    <Variable>
+      <Variable_Name>Date</Variable_Name>
+      <Description_of_Variable>Observation date (yyyy/mm/dd)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>Time</Variable_Name>
+      <Description_of_Variable>Observation time (hh:mm)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>Lat</Variable_Name>
+      <Description_of_Variable>Latitude (degrees north)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>Lon</Variable_Name>
+      <Description_of_Variable>Longitude (degrees east)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>xCO2a</Variable_Name>
+      <Description_of_Variable>Mole fraction of CO2 in ambient atmosphere (micro mol/mol in dry air)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>F</Variable_Name>
+      <Description_of_Variable>2: Acceptable, 4: Not measured with missing value "-999" on the left.</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>xCO2eq</Variable_Name>
+      <Description_of_Variable>Mole fraction of CO2 in air from equilibrator (micro mol/mol in dry air)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>F</Variable_Name>
+      <Description_of_Variable>2: Acceptable, 4: Not measured with missing value "-999" on the left.</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>AtmPrs</Variable_Name>
+      <Description_of_Variable>Atmospheric pressure at sea-surface pressure (hPa)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>F</Variable_Name>
+      <Description_of_Variable>2: Acceptable, 4: Not measured with missing value "-999" on the left.</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>TmpEq</Variable_Name>
+      <Description_of_Variable>Temperature at equilibration (DEG_C)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>F</Variable_Name>
+      <Description_of_Variable>2: Acceptable, 4: Not measured with missing value "-999" on the left.</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>SST</Variable_Name>
+      <Description_of_Variable>In situ sea surface temperature (DEG_C)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>F</Variable_Name>
+      <Description_of_Variable>2: Acceptable, 4: Not measured with missing value "-999" on the left.</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>SSS</Variable_Name>
+      <Description_of_Variable>Sea surface salinity (psu)</Description_of_Variable>
+    </Variable>
+    <Variable>
+      <Variable_Name>F</Variable_Name>
+      <Description_of_Variable>2: Acceptable, 4: Not measured with missing value "-999" on the left.</Description_of_Variable>
+    </Variable>
+  </Variables_Info>
+  <Method_Description>
+    <Equilibrator_Design>
+      <System_Manufacturer_Description>Ohkura Rosemount Co., Ltd.</System_Manufacturer_Description>
+      <Depth_of_Sea_Water_Intake>5</Depth_of_Sea_Water_Intake>
+      <Location_of_Sea_Water_Intake>Sea-chest at the center in the longitudinal direction of a hull.</Location_of_Sea_Water_Intake>
+      <Equilibrator_Type>Shower head</Equilibrator_Type>
+      <Equilibrator_Volume>2 (air), 20 (seawater)</Equilibrator_Volume>
+      <Water_Flow_Rate>5</Water_Flow_Rate>
+      <Headspace_Gas_Flow_Rate>500</Headspace_Gas_Flow_Rate>
+      <Vented>Yes</Vented>
+      <Drying_Method_for_CO2_in_water>Thermoelectric cooling units followed by permeable membrane dryer and magnessium perchlorate tube.</Drying_Method_for_CO2_in_water>
+    </Equilibrator_Design>
+    <CO2_in_Marine_Air>
+      <Measurement>Yes, every 1 hour.</Measurement>
+      <Location_and_Height>Bow tip, 6m.</Location_and_Height>
+      <Drying_Method>Thermoelectric cooling units followed by permeable membrane dryer and magnessium perchlorate tube.</Drying_Method>
+    </CO2_in_Marine_Air>
+    <CO2_Sensors>
+      <CO2_Sensor>
+        <Measurement_Method>Infra-red analysis on dry gas</Measurement_Method>
+        <Manufacturer>Beckman Industrial</Manufacturer>
+        <Model>Model 880</Model>
+        <Frequency>Every 1 hour</Frequency>
+        <Resolution_Water>2.99 micro mol/mol (xCO2eq)</Resolution_Water>
+        <Resolution_Air>1.05 micro mol/mol (xCO2a)</Resolution_Air>
+        <Manufacturer_of_Calibration_Gas>Japan Fine Products Co., Ltd. (Japan)
+4 cylinders
+270 - 410 micro mol/mol
+Every 2 months</Manufacturer_of_Calibration_Gas>
+        <No_Of_Non_Zero_Gas_Stds>4</No_Of_Non_Zero_Gas_Stds>
+        <CO2_Sensor_Calibration>Frequency: Every 1 hour, Scale: WMO mole fraction scale</CO2_Sensor_Calibration>
+        <Sensor_Calibration>Pre- and post-cruise calibration of working standard gases  using standard gases at JMA.
+Measurements of working standard gases during the cruise</Sensor_Calibration>
+        <Method_References>Hirota, M., Nemoto, K., Murata, A., and Fushimi, K. 1991. Observation of carbon dioxide in air and surface seawater in the western North Pacific Ocean. Oceanogr. Mag., 41, 19-28.</Method_References>
+        <Details_Co2_Sensing>Infrared absorption</Details_Co2_Sensing>
+        <Measured_Co2_Params>xCO2(dry)</Measured_Co2_Params>
+      </CO2_Sensor>
+    </CO2_Sensors>
+    <Sea_Surface_Temperature>
+      <Location>Sea-chest at the center in the longitudinal direction of a hull. Depth  5m</Location>
+      <Manufacturer>Falmouth Scientific Inc.</Manufacturer>
+      <Model>OTM 1364</Model>
+      <Accuracy>0.003 DEG_C</Accuracy>
+    </Sea_Surface_Temperature>
+    <Equilibrator_Temperature>
+      <Location>Shower head</Location>
+      <Manufacturer>M-System Co., Ltd.</Manufacturer>
+      <Model>JR-35-B</Model>
+      <Accuracy>0.1 DEG_C</Accuracy>
+      <Warming>0.55 +- 0.25 DEG_C</Warming>
+    </Equilibrator_Temperature>
+    <Equilibrator_Pressure>
+      <Normalized>yes</Normalized>
+    </Equilibrator_Pressure>
+    <Atmospheric_Pressure>
+      <Location>At the same laboratory in the ship</Location>
+      <Manufacturer>Yanagi Instrument Co.,Ltd.</Manufacturer>
+      <Model>Aneroid barograph No.670201</Model>
+    </Atmospheric_Pressure>
+  </Method_Description>
+  <Data_set_References>Inoue, H. Y., Ishii, M., Matsueda, H., Saito, S., Midorikawa, T., and Nemoto, K. 1999. MRI measurements of partial pressure of CO2 in surface waters of the Pacific during 1968 to 1970: re-evaluation and comparison of data with those of 1980s and 1990s. Tellus, 51B, 830-848.</Data_set_References>
+  <Preliminary_Quality_control>NC</Preliminary_Quality_control>
+  <Data_Link>
+    <URL>C:\fakepath\RY9405.csv</URL>
+  </Data_Link>
+  <form_type>underway</form_type>
+</x_tags>
+
