@@ -160,7 +160,7 @@ def extract_json_metadata(filename, str_file, percent_check):
         json_data = json.loads(xml_to_json(filename))
     else:
         with open(filename, 'r') as f:
-            json_data = json.loads(f)
+            json_data = json.load(f)
 
     depth = get_depth(json_data)
 
@@ -187,8 +187,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     t0 = time.time()
-    meta = {"json/xml": extract_json_metadata(args.path, args.str_output,
-                                              args.percent_check)}
-    print(meta)
+    metadata = extract_json_metadata(args.path, args.str_output,
+                                     args.percent_check)
+    print(metadata)
+
     t1 = time.time()
     print(t1 - t0)
