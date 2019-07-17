@@ -5,6 +5,7 @@ import math
 import argparse
 import time
 
+
 def xml_to_json(xml_file):
     """Converts an xml file to a json file for processing.
 
@@ -189,5 +190,6 @@ if __name__ == "__main__":
     metadata = extract_json_metadata(args.path, args.str_output,
                                      args.percent_check)
     print(metadata)
+
     t1 = time.time()
     print(t1 - t0)
