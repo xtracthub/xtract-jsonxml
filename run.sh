@@ -7,5 +7,5 @@ echo "Input a directory to mount"
 DIRECTORY=/xtract-jsonxml/test_files
 
 echo $DIRECTORY
-docker run -it -v /xtract-jsonxml/test_files:/xtract-jsonxml/test_files $IMAGE_NAME /bin/bash
+docker run -it -v ~/pub8:/xtract-jsonxml/test_files $IMAGE_NAME /bin/bash
 
