@@ -1,11 +1,10 @@
 #!/bin/bash
 
-IMAGE_NAME='xtract_jsonxml_image'
+IMAGE_NAME='xtract_tabular_image'
 
-echo "Input a directory to mount"
-#read DIRECTORY
-DIRECTORY=/xtract-jsonxml/test_files
+args_array=("$@")
+DIRECTORY=("${args_array[@]:0:1}")
+FILE_NAME=("${args_array[@]:1:1}")
+CMD_ARGS=("${args_array[@]:2}")
 
-echo $DIRECTORY
-docker run -it -v ~/pub8:/xtract-jsonxml/test_files $IMAGE_NAME /bin/bash
-
+docker run -v $DIRECTORY:/$DIRECTORY $IMAGE_NAME --path /$DIRECTORY/$FILE_NAME "${CMD_ARGS[@]}"
