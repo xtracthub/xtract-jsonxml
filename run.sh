@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME='xtract_tabular_image'
+IMAGE_NAME='xtract_jsonxml_image'
 
 args_array=("$@")
 DIRECTORY=("${args_array[@]:0:1}")
