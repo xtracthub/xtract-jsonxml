@@ -105,7 +105,8 @@ def return_list_of_strings(list_of_items, str_file):
             continue
 
 
-def json_tree_data(d, headers, columns, str_file, percent_check=1):
+def json_tree_data(d, headers, columns, str_file, output_str=False,
+                   percent_check=1):
     """Extracts data from a json file.
 
     Parameters:
@@ -115,6 +116,7 @@ def json_tree_data(d, headers, columns, str_file, percent_check=1):
     str_file (str): Name of file to output strings to.
     percent_check (float): Percentage of items in a list to check
     for uniformity.
+    output_str (bool): Whether to output strings to str_file or not.
 
     Return:
     (tuple): 2-tuple of headers and columns.
@@ -122,7 +124,8 @@ def json_tree_data(d, headers, columns, str_file, percent_check=1):
     for k, v in d.items():
         if isinstance(v, dict):
             headers.append(k)
-            json_tree_data(v, headers, columns, str_file, percent_check)
+            json_tree_data(v, headers, columns, str_file, percent_check=percent_check,
+                           output_str=output_str)
         else:
             headers.append(k)
             columns[k] = [type(v)]
@@ -135,24 +138,38 @@ def json_tree_data(d, headers, columns, str_file, percent_check=1):
 
                 if presumed_type in [int, float]:
                     columns[k].append(get_numerical_metadata(v))
-                elif presumed_type == str:
-                    return_list_of_strings(v, str_file)
-            elif type(v) == str:
-                return_string(v, str_file)
+                elif presumed_type == str and output_str:
+                    try:
+                        return_list_of_strings(v, str_file)
+                    except:
+                        pass
+            elif type(v) == str and output_str:
+                try:
+                    return_string(v, str_file)
+                except:
+                    pass
 
     return headers, columns
 
 
-def extract_json_metadata(filename, str_file, percent_check):
+def extract_json_metadata(filename, str_file=None, percent_check=1,
+                          output_str=False):
     """Extracts metadata from json or xml file.
 
     Parameter:
-    filename (str):  Name of json or xml file to get metadata from.
+    filename (str): Name of json or xml file to get metadata from.
+    str_file (str): Name for string output file.
+    percent_check (float): Percentage of items in a column to check
+    uniformity for.
+    output_str (bool): Whether to output strings to str_file or not.
 
     Return:
     metadata (dictionary): Dictionary of depth, headers, and columns from
     filename.
     """
+    if str_file is None:
+        str_file = '{}-strings.txt'.format(filename)
+
     headers = []
     columns = {}
 
@@ -160,12 +177,13 @@ def extract_json_metadata(filename, str_file, percent_check):
         json_data = json.loads(xml_to_json(filename))
     else:
         with open(filename, 'r') as f:
-            json_data = json.load(f)
+            json_data = json.loads(f)
 
     depth = get_depth(json_data)
 
     json_tree = json_tree_data(json_data, headers, columns, str_file,
-                               percent_check)
+                               output_str=output_str,
+                               percent_check=percent_check)
     headers = json_tree[0]
     columns = json_tree[1]
 
@@ -180,6 +198,8 @@ if __name__ == "__main__":
                         required=True)
     parser.add_argument("--percent_check", type=float, default=1,
                         help="percent of columns to check for uniformity")
+    parser.add_argument("--str_output", type=bool, default=True,
+                        help="whether to return a string output file")
     args = parser.parse_args()
     parser.add_argument("--str_output", type=str,
                         default="{}-strings.txt".format(args.path),
@@ -187,9 +207,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     t0 = time.time()
-    metadata = extract_json_metadata(args.path, args.str_output,
-                                     args.percent_check)
-    print(metadata)
-
+    meta = {"json/xml": extract_json_metadata(args.path, args.str_output,
+                                              args.percent_check,
+                                              args.str_output)}
+    print(meta)
     t1 = time.time()
     print(t1 - t0)
