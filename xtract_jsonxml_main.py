@@ -114,7 +114,6 @@ def json_tree_data(d, headers, columns, strings_from_json, percent_check=1):
             elif type(v) == str:
                 strings_from_json.append(v)
 
-
     return headers, columns, ' '.join(strings_from_json)
 
 
@@ -138,7 +137,7 @@ def extract_json_metadata(filename, percent_check=1):
         json_data = json.loads(xml_to_json(filename))
     else:
         with open(filename, 'r') as f:
-            json_data = json.loads(f)
+            json_data = json.load(f)
 
     depth = get_depth(json_data)
 
