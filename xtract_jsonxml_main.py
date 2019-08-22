@@ -147,7 +147,10 @@ def extract_json_metadata(filename, percent_check=1):
     columns = json_tree[1]
     strings_from_json = json_tree[2]
 
-    metadata = {"maxdepth": depth, "headers": headers, "columns": columns, "strings": strings_from_json}
+    t0 = time.time()
+    metadata = {"json/xml": {"maxdepth": depth, "headers": headers, "columns": columns, "strings": strings_from_json}}
+    metadata.update({"extract time": time.time() - t0})
+
     return metadata
 
 
@@ -160,9 +163,5 @@ if __name__ == "__main__":
                         help="percent of columns to check for uniformity")
     args = parser.parse_args()
 
-    t0 = time.time()
-    meta = {"json/xml": extract_json_metadata(args.path, args.percent_check)}
-    t1 = time.time()
-    meta.update({"extract time": (t1 - t0)})
+    meta = extract_json_metadata(args.path, percent_check=args.percent_check)
     print(meta)
-    print(t1 - t0)
