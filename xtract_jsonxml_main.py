@@ -107,10 +107,7 @@ def json_tree_data(d, headers, columns, strings_from_json, percent_check=1):
                 if presumed_type in [int, float]:
                     columns[k].append(get_numerical_metadata(v))
                 elif presumed_type == str:
-                    # print(v)
-                    # print(strings_from_json)
-                    # strings_from_json.extend(v)
-                    print("blah")
+                    strings_from_json.extend(v)
             elif type(v) == str:
                 strings_from_json.append(v)
 
