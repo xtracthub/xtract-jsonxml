@@ -96,7 +96,7 @@ def json_tree_data(d, headers, columns, strings_from_json, percent_check=1):
                            percent_check=percent_check)
         else:
             headers.append(k)
-            columns[k] = [type(v)]
+            columns[k] = str(type(v))
 
             if type(v) == list:
 
