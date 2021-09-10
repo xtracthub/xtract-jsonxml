@@ -6,6 +6,16 @@ import argparse
 import time
 
 
+def execute_extractor(filename):
+    t0 = time.time()
+    if not filename:
+        return None
+    metadata = extract_json_metadata(filename=filename)
+    t1 = time.time()
+    metadata.update({"extract time": (t1 - t0)})
+    return metadata
+
+
 def xml_to_json(xml_file):
     """Converts an xml file to a json file for processing.
 
