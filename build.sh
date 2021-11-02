@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME='xtract_jsonxml_image'
+IMAGE_NAME='xtract-jsonxml'
 
 docker rmi $IMAGE_NAME
 
