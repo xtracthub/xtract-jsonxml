@@ -7,5 +7,6 @@ COPY test_files /
 
 RUN pip install -r requirements.txt
 
+ENV CONTAINER_VERSION=1.0
 
 #ENTRYPOINT ["python", "xtract_jsonxml_main.py"]
