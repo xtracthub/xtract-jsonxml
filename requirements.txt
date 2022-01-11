@@ -3,4 +3,5 @@ statistics
 argparse
 funcx
 funcx_endpoint
-xtract_sdk==0.0.7a2
+numpy
+xtract_sdk==0.0.7a11

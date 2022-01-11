@@ -3,9 +3,11 @@ FROM python:3.6
 MAINTAINER Tyler J. Skluzacek (skluzacek@uchicago.edu) 
 
 COPY xtract_jsonxml_main.py requirements.txt /
+COPY xtract_opener_main.py /
 COPY test_files /
 
 RUN pip install -r requirements.txt
+
 
 ENV CONTAINER_VERSION=1.0
 
